@@ -227,28 +227,43 @@ public class View extends JFrame {
 		
 		BtnRetirarArbre.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String id = JOptionPane.showInputDialog("Indica la id del elemento Flor");
-				int idArbre = Integer.parseInt(id);
-				
-				floristeria.DelElementToListArbre( idArbre);
+				String id = JOptionPane.showInputDialog("Indica la id del elemento Abre");
+				if (id == null) {
+					jtaStock.setText(opCancel);
+				} else {
+
+					int idArbre = Integer.parseInt(id);
+
+					floristeria.DelElementToListArbre(idArbre);
+				}
 			}
 		});
 		
 		BtnRetirarFlor.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String id = JOptionPane.showInputDialog("Indica la id del elemento Flor");
-				int idFlor = Integer.parseInt(id);
 				
-				floristeria.DelElementToListFlor( idFlor);
+				if (id == null) {
+					jtaStock.setText(opCancel);
+				} else {
+					int idFlor = Integer.parseInt(id);
+
+					floristeria.DelElementToListFlor(idFlor);
+				}
+
 			}
 		});
 		
 		BtnRetirarDeco.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String id = JOptionPane.showInputDialog("Indica la id del elemento Decoracion");
-				int idDec = Integer.parseInt(id);
-				
-				floristeria.DelElementToListDec( idDec);
+				if (id == null) {
+					jtaStock.setText(opCancel);
+				} else {
+					int idDec = Integer.parseInt(id);
+
+					floristeria.DelElementToListDec(idDec);
+				}
 			}
 		});
 		
